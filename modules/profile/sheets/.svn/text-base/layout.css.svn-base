@@ -1,0 +1,55 @@
+#profile
+{
+  width: 100%;
+}
+
+.profile-input-avatar
+{
+
+}
+
+#profile-avatar IMG
+{
+  float: right;
+  margin: 0 0 10px 10px;
+  border: 1px solid #666666;
+  padding: 1px;
+}
+
+.profile-attribute
+{
+  font-weight: bold;
+ /* float:left;
+  width:150px;*/
+}
+
+.profile-value
+{
+
+}
+
+.profile-input-identity INPUT
+{
+  margin-top: 5px;
+  width: 40%;
+  color: #ffffff;
+  background: #444444;
+  border: 1px solid #000000;
+}
+
+.profile-input-gender {
+float:left;
+
+}
+
+.profile-input-gender p {
+float:left;
+font-family:Helvetica, sans-serif;
+font-size:14px;
+margin-right:10px;
+}
+
+
+.value, .attribute, input, select, textarea {
+margin-top:5px;
+}

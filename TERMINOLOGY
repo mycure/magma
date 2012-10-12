@@ -1,0 +1,53 @@
+Puisque PHP ne supporte pas la surcharge de fonctions, il nous
+faut des fonctions differentes. Par exemple on ne peut pas avoir
+un constructeur qui prend des inputs et un autre constructeur
+qui prend un id pour charger l'objet de la base de donnees.
+
+Pour la meme raison, on n'utilisera jamais le constructeur.
+
+Voici les noms a utilises:
+
+---[ __construct(private)
+
+Cree un objet en RAM a partir des inputs donnes. Tous
+les attributs de l'objet doivent etre fournis.
+
+---[ Reserve(public)
+
+Cet objet verifie tout d'abord qu'il n'existe pas d'objets
+rentrant en conflit dans la BDD.
+
+---[ Release(public)
+
+Detruit un objet de la BDD. Bien sur, puisque cette fonction
+n'est pas statique il faut tout d'abord avoir charge l'objet
+en RAM.
+
+---[ Load(public)
+
+Cette methode peut etre utilisee a la place de Reserve() pour
+charger un objet de la BDD plutot que d'en creer un.
+
+---[ Store(public)
+
+Cette methode sauvegarde l'objet dans la BDD.
+
+---[ Destroy(public)
+
+Cette methode detruit l'objet de la BDD.
+
+---[ Lookup(public)
+
+Cette methode retourne True si il existe une entree qui match
+les caracteristiques *uniques* donnees. Par exemple, pour un
+User, l'email est unique; il ne peut y avoir deux Users avec
+le meme email. Cette fonction retourne True si il existe
+deja une entree de ce type.
+
+---[ Install(public)
+
+Cette methode installe les tables liees a l'objet en cours.
+
+---[ Initialise(public)
+
+Cette methode initialise une classe ou un objet.

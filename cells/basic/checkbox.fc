@@ -1,0 +1,47 @@
+/*
+ * retrieve arguments
+ */
+$name = $context->Get("name");
+$items = $context->Get("items");
+
+$class = $context->Get("class", "", 'class="%class%"');
+
+/*
+ * compute the elements
+ */
+$elements = Template::Resolve();
+
+foreach ($items as $item)
+{
+  $checked = "";
+
+  if (isset($item["checked"]) == true)
+    $checked = "checked";
+
+  $elements .= Template::Resolve('<input type="checkbox" name="%name%" value="%value%" %class% %checked% />%text%',
+				 array("name" => $name,
+				       "value" => $item["value"],
+				       "class" => $class,
+				       "checked" => $checked,
+				       "text" => $item["text"]));
+}
+
+/*
+ * template
+ */
+$template = <<<END
+%elements%
+END;
+
+/*
+ * generate the cell
+ */
+$cell = Template::Resolve($template,
+			  array("elements" => $elements));
+
+/*
+ * print the cell
+ */
+print $cell;
+
+return true;

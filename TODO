@@ -1,0 +1,30 @@
+o les settings (des modules) (via Metadata?)
+o rajouter des foreign keys dans les tables genre Connection
+o ajouter kses de Elgg (enfin si c'est important mais ca doit
+  l'etre)
+o pour la recherche, se demerder pour que les classes retourne une string
+  correspondant a leur requete, et la classe Search lance une requete en
+  faisant des join et hop. comme ca on evite plusieurs requetes SQL (quoi
+  que ca reviendra surement au meme)
+
+XXX
+
+o ajouter un event sur user#delete -> virer le profile et virer les contacts
+o rajouter l'equivalent de Exist mais pour l'autorisation d'acces (ou bien throw Fraud)
+o implement OpenID:
+    http://www.intertwingly.net/blog/2007/01/03/OpenID-for-non-SuperUsers
+    http://siege.org/projects/phpMyID/
+    http://openid.net/developers/
+o ca deconne quand on acceder a un repertoire /modules/ par exemple. le .htaccess
+  devrait etre ameliore pour que tout soit passe au wrapper (sauf fichier css, js
+  et ce qui commence par store (bien qu'il faut eviter les access genre store/../engine/)
+o tester HTTPS
+o les Configuration::Get des Directory doivent mettre Path avant.
+o faire un atom pour la registration (+check) d'un user: setup/user modules
+o faire en sorte que les themes et canvas fonctionnent ensemble car a l'heure
+  actuelle on appelle canvas (du PHP) mais on ne fait rien avec le theme.
+o utiliser la fonction Interface de PHP (enfin si ca marche avec les classes statiques)
+  pour avoir une meilleur gestion des "feature"s (apparemment pas possible avec static)
+o virer les Core::Import et utiliser les atoms, c'est clairement fait pour ca
+  meme si ca bouge les fichiers entre cells et atoms
+o rajouter des events pour Engine::Start etc.

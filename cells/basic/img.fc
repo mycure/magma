@@ -1,0 +1,29 @@
+/*
+ * retrieve arguments
+ */
+$src = $context->Get("src");
+
+$alt = $context->Get("alt", "", 'alt="%alt%"');
+$class = $context->Get("class", "", 'class="%class"');
+
+/*
+ * template
+ */
+$template = <<<END
+<img src="%src%" %alt% %class% />
+END;
+
+/*
+ * generate the cell
+ */
+$cell = Template::Resolve($template,
+			  array("src" => $src,
+				"alt" => $alt,
+				"class" => $class));
+
+/*
+ * print the cell
+ */
+print $cell;
+
+return true;

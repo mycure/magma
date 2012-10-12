@@ -1,0 +1,27 @@
+/*
+ * retrieve arguments
+ */
+$value = $context->Get("value");
+
+$class = $context->Get("class", "", 'class="%class%');
+
+/*
+ * the template
+ */
+$template = <<<END
+<input type="submit" value="%value%" %class% />
+END;
+
+/*
+ * generate the cell
+ */
+$cell = Template::Resolve($template,
+			  array("value" => $value,
+				"class" => $class));
+
+/*
+ * print the cell
+ */
+print $cell;
+
+return true;

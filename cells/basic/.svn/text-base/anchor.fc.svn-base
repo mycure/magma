@@ -1,0 +1,29 @@
+/*
+ * retrieve arguments
+ */
+$href = $context->Get("href");
+$text = $context->Get("text");
+
+$class = $context->Get("class", "", 'class="%class%"');
+
+/*
+ * template
+ */
+$template = <<<END
+<a href="%href%" %class%>%text%</a>
+END;
+
+/*
+ * generate cell
+ */
+$cell = Template::Resolve($template,
+			  array("href" => $href,
+				"text" => $text,
+				"class" => $class));
+
+/*
+ * print cell
+ */
+print $cell;
+
+return true;

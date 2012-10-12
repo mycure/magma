@@ -1,0 +1,27 @@
+/*
+ * retrieve arguments
+ */
+$name = $context->Get("name");
+
+$size = $context->Get("size", "", 'size="%size%"');
+
+/*
+ * template
+ */
+$template = <<<END
+<input type="file" name="%name%" %size% />
+END;
+
+/*
+ * generate the cell
+ */
+$cell = Template::Resolve($template,
+			  array("name", $name,
+				"size", $size));
+
+/*
+ * print the cell
+ */
+print $cell;
+
+return true;

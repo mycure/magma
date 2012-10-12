@@ -1,0 +1,183 @@
+/*
+ * restrict access to administrators or everyone if the system
+ * is not set up yet.
+ */
+if (Check::Feature("user") == true)
+  Keep::Administrator();
+
+/*
+ * retrieve the list of modules
+ */
+$catalogue = Module::Catalogue();
+
+$items = array();
+
+foreach ($catalogue as $name)
+{
+  $item = array();
+
+  $module = Module::Load($name);
+
+  $template = <<<END
+%name%
+<br />
+<i>
+  %description%
+</i>
+END;
+
+  $item["text"] = Template::Resolve($template,
+				    array("name" => $module->name,
+					  "description" => Language::Translate($module->description)));
+  $item["value"] = $module->name;
+  $item["checked"] = false;
+
+  if (Module::Exist($module->name) == true)
+    $item["checked"] = true;
+
+  $items[] = $item;
+}
+
+$modules = Cell::Call("basic/checkbox", array("name" => "modules[]",
+					      "items" => $items));
+
+/*
+ * retrieve the list of languages
+ */
+$catalogue = Language::Catalogue();
+
+$items = array();
+
+foreach ($catalogue as $entry)
+{
+  $item = array();
+
+  $item["text"] = Language::Translate("engine|language|" . $entry);
+  $item["value"] = $entry;
+
+  $items[] = $item;
+}
+
+$languages = Cell::Call("basic/select",
+			array("name" => "admin-language",
+			      "items" => $items));
+
+/*
+ * build the other field elements
+ */
+$name = Cell::Call("basic/text",
+		   array("name" => "admin-name"));
+
+$password = Cell::Call("basic/password",
+		       array("name" => "admin-password"));
+
+$verification = Cell::Call("basic/password",
+			   array("name" => "admin-verification"));
+
+$email = Cell::Call("basic/text",
+		    array("name" => "admin-email"));
+
+$button = Cell::Call("basic/button",
+		     array("value" => Language::Translate("setup|home|button")));
+
+/*
+ * generate the whole form
+ */
+$template = <<<END
+<h2>%modules|title%</h2>
+
+  %modules|description%
+
+  <br/>
+
+  $modules
+
+<h2>%registration|title%</h2>
+
+  %registration|description%
+  <br/>
+
+  <span class="user-attribute">%name|key%</span>:
+  <div class="user-input-name">
+    %name|value%
+  </div>
+
+  <br />
+
+  <span class="password-attribute">%password|key%</span>:
+  <div class="password-input-name">
+    %password|value%
+  </div>
+
+  <br />
+
+  <span class="verification-attribute">%verification|key%</span>:
+  <div class="verification-input-name">
+    %verification|value%
+  </div>
+
+  <br />
+
+  <span class="email-attribute">%email|key%</span>:
+  <div class="email-input-name">
+    %email|value%
+  </div>
+
+  <br />
+
+  <span class="user-attribute">%language|key%</span>:
+  <div class="user-input-language">
+    %language|values%
+  </div>
+
+  <h2>%install|title%</h2>
+
+  %install|description%
+  <br />
+
+  <span class="button">
+    %button%
+  </span>
+END;
+
+$fields = Template::Resolve($template,
+			    array("modules|title" => Language::Translate("setup|home|modules|title"),
+				  "modules|description" => Language::Translate("setup|home|modules|description"),
+
+				  "registration|title" => Language::Translate("setup|home|registration|title"),
+				  "registration|description" => Language::Translate("setup|home|registration|description"),
+
+				  "install|title" => Language::Translate("setup|home|install|title"),
+				  "install|description" => Language::Translate("setup|home|install|description"),
+
+				  "name|key" => Language::Translate("setup|home|registration|name"),
+				  "name|value" => $name,
+				  "password|key" => Language::Translate("setup|home|registration|password"),
+				  "password|value" => $password,
+				  "verification|key" => Language::Translate("setup|home|registration|verification"),
+				  "verification|value" => $verification,
+				  "email|key" => Language::Translate("setup|home|registration|email"),
+				  "email|value" => $email,
+				  "language|key" => Language::Translate("setup|home|registration|language"),
+				  "language|values" => $languages,
+
+				  "button" => $button));
+
+/*
+ * generate the page
+ */
+$page = Cell::Call("basic/form",
+		   array("action" => Configuration::Get("URL") . "/setup:install",
+			 "method" => "POST",
+			 "body" => $fields));
+
+/*
+ * select the canvas and display the page
+ */
+Page::Display(Language::Translate("setup|home|title"),
+	      array("menu" => "",
+		    "panel" => "",
+		    "contents" => $page,
+		    "spot" => ""));
+
+return true;

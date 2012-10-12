@@ -1,0 +1,45 @@
+/*
+ * retrieve reports
+ */
+$reports = Report::Retrieve();
+
+if (empty($reports) == false)
+  {
+    print '<div class="report"';
+
+    /*
+     * for each report, forward to a specific report handler
+     */
+    foreach ($reports as $report)
+      {
+	switch ($report["type"])
+	  {
+	  case Report::TypeFailure:
+	    {
+	      $code = Cell::Call("report/failure",
+				 array("report" => $report));
+	      break;
+	    }
+	  case Report::TypeWarning:
+	    {
+	      $code = Cell::Call("report/warning",
+				 array("report" => $report));
+	      break;
+	    }
+	  case Report::TypeSuccess:
+	    {
+	      $code = Cell::Call("report/success",
+				 array("report" => $report));
+	      break;
+	    }
+	  default:
+	    throw new Fault("The given report type does not exist");
+	  }
+
+	print $code;
+      }
+
+    print '</div>';
+  }
+
+return true;

@@ -1,0 +1,150 @@
+/* ******************
+PAGE STYLES
+******************** */
+
+body {
+	background: #0054a7;
+	font: 80%/1.4  Arial, Helvetica, Verdana, sans-serif;
+	color: #333333;
+	background: url(../graphics/page_back_linen2.gif) repeat left 1px;
+}
+
+#container {
+	background: url(../graphics/page_back_linen_shadow2.gif) repeat-y center top;
+}
+
+#wrapper {
+	
+}
+
+#layout {
+	background: #f4f4f4;
+	border-right: 1px solid #333333;
+	border-bottom: 1px solid #333333;
+}
+
+
+
+#layout-top {
+	text-align:left;
+	border-bottom:1px solid #4690d6;
+	background:white;
+}
+
+
+#layout-left {
+	background: white;
+	border-bottom:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+}
+
+/* CONTENT STYLE */
+#layout-right {
+	background: white;
+	border-bottom:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+}
+
+#layout-bottom {
+	background: url(../graphics/footer.gif) repeat-x ;
+}
+
+/* We must set the bg color and color of layout-right to clearfloat*/
+.clearfloat {
+background-color: white;
+color: white;
+height:1px;
+}
+
+
+h2 {
+	background:#F5F5F5;
+	border-top:2px solid #4690D6;
+	color:#0054A7;
+	font-size:1.35em;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	line-height:1.2em;
+	margin:0pt 0pt 5px;
+	padding:5px;
+}
+
+
+/* Set a global link class */
+a {
+text-decoration:none;
+color: #388cff;
+}
+
+/* ********************************
+STYLES FOR USER INFORMATION
+********************************** */
+
+.attribute {
+  float:left;
+  font-weight: bold;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  width: 150px;
+}
+
+.value {
+  float:left;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  margin-left:5px;
+}
+
+
+/* ***************************
+ STYLES FOR FORMS
+***************************** */
+
+input, textarea, select {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 1px;
+	border: 1px solid #cccccc;
+	color:#666666;
+}
+
+input[type="submit"] {
+	font: 12px/100% Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #ffffff;
+	background:#4690d6;
+	border: 1px solid #4690d6;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
+	width: auto;
+	height: 25px;
+	padding: 2px 6px 2px 6px;
+	margin:10px 0 10px 0;
+	cursor: pointer;
+}
+
+span.checkbox {
+   width: 19px;
+   height: 25px;
+   padding: 0 5px 0 0;
+   background: url(../graphics/checkbox.png) no-repeat;
+   display: block;
+   clear: left;
+   float: left;
+}
+
+span.radio {
+   width: 25px;
+   height: 19px;
+   padding: 0 5px 0 0;
+   background: url(../graphics/radio.png) no-repeat;
+   float: left;
+  /* clear: left;*/
+}
+span.select {
+   position: absolute;
+   width: 158px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+   height: 21px;
+   padding: 0 24px 0 8px;
+   color: #fff;
+   font: 12px/21px arial,sans-serif;
+   background: url(../graphics/select.png) no-repeat;
+   overflow: hidden;
+}

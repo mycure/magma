@@ -1,0 +1,35 @@
+/*
+ * retrieve arguments
+ */
+$name = $context->Get("name");
+$text = $context->Get("text");
+
+$class = $context->Get("class", "", 'class="%class%"');
+$cols = $context->Get("cols", "", 'cols="%cols"');
+$rows = $context->Get("rows", "", 'rows="%rows"');
+
+/*
+ * template
+ */
+$template = <<<END
+<textarea name="%name%" %cols% %rows% %class%>
+%text%
+</textarea>
+END;
+
+/*
+ * generate cell
+ */
+$cell = Template::Resolve($template,
+			  array("name" => $name,
+				"cols" => $cols,
+				"rows" => $rows,
+				"class" => $class,
+				"text" => $text));
+
+/*
+ * print cell
+ */
+print $cell;
+
+return true;

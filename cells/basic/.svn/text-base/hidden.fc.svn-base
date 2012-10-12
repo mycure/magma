@@ -1,0 +1,27 @@
+/*
+ * retrieve arguments
+ */
+
+$name = $context->Get("name");
+$value = $context->Get("value");
+
+/*
+ * template
+ */
+$template = <<<END
+<input type="hidden" name="%name%" value="%value%" />
+END;
+
+/*
+ * generate the cell
+ */
+$cell = Template::Resolve($template,
+			  array("name", $name,
+				"value", $value));
+
+/*
+ * print the cell
+ */
+print $cell;
+
+return true;

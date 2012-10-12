@@ -1,0 +1,182 @@
+/* ******************
+PAGE STYLES
+******************** */
+
+body {
+	font: 80%/1.4  Arial, Helvetica, Verdana, sans-serif;
+	color: #333333;
+	background-image:url(../graphics/background.gif);
+	background-repeat:repeat-x;
+	background-color:#607089;
+	margin:0px;
+}
+
+#container {
+	
+}
+
+#wrapper {
+
+}
+
+#canvas {
+	background-image:url(../graphics/layout_bg.gif);
+	background-repeat:repeat-y;
+}
+
+
+
+#canvas-top {
+	background-image:url(../graphics/header.gif);
+	background-repeat:no-repeat;
+	background-position:bottom;
+}
+
+
+#canvas-left {
+	background: white;
+}
+
+/* CONTENT STYLE */
+#canvas-right {
+	background-image:url(../graphics/topround.gif);
+	background-repeat:no-repeat;
+	background-position:top left;
+	background-color:#FFFFFF;
+}
+
+#canvas-bottom {
+	background: url(../graphics/footer.gif);
+	background-repeat:no-repeat;
+	width:935px;
+	height:140px;
+	text-align:left;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:8pt;
+	color:#29313c
+}
+
+/* We must set the bg color and color of canvas-right to clearfloat*/
+.clearfloat {
+	background-color: white;
+	color: white;
+	height:1px;
+}
+
+
+h2 {
+	background:#5f7189;
+	border-top:2px solid #000;
+	color:#ff397a;
+	font-size:12pt;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	line-height:1.2em;
+	margin:0pt 0pt 5px;
+	padding:5px;
+}
+
+
+/* Set a global link class */
+a {
+	font-family:Verdana,Arial, Helvetica, sans-serif;
+	color: #9c9c9c;
+	font-size:10pt;
+	text-decoration:none;
+}
+
+a:hover {
+	color: #ff397a;
+}
+
+
+/* ********************************
+STYLES FOR USER INFORMATION
+********************************** */
+
+.attribute {
+ 	float:left;
+ 	font-weight: bold;
+  	font: 14px/100% Arial, Helvetica, sans-serif;
+  	width: 110px;
+  	color: #525252;
+	/*font-size:14px/100% Arial, Helvetica, sans-serif;
+*/
+}
+
+.value {
+  	float:left;
+  	font: 14px/100% Arial, Helvetica, sans-serif;
+  	margin-left:5px;
+}
+
+
+/* ***************************
+ STYLES FOR FORMS
+***************************** */
+
+input, textarea, select {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 1px;
+	border: 1px solid #cccccc;
+	color:#666666;
+}
+
+input[type="submit"] {
+	font: 12px/100% Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #ffffff;
+	background:#5f7189;
+	border: 1px solid #5f7189;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
+	width: auto;
+	height: 25px;
+	padding: 2px 6px 2px 6px;
+	margin:10px 0 10px 0;
+	cursor: pointer;
+}
+
+span.checkbox {
+  	 width: 19px;
+ 	 height: 25px;
+ 	 padding: 0 5px 0 0;
+  	 background: url(../graphics/checkbox.png) no-repeat;
+ 	 display: block;
+ 	 clear: left;
+ 	 float: left;
+}
+
+span.radio {
+	width: 25px;
+   	height: 19px;
+   	padding: 0 5px 0 0;
+   	background: url(../graphics/radio.png) no-repeat;
+   	float: left;
+  /* clear: left;*/
+}
+span.select {
+   	position: absolute;
+   	width: 158px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+   	height: 21px;
+   	padding: 0 24px 0 8px;
+   	color: #fff;
+   	font: 12px/21px arial,sans-serif;
+   	background: url(../graphics/select.png) no-repeat;
+   	overflow: hidden;
+}
+
+/* *********************
+Errors Notification
+********************* */
+
+#report {
+	background-color :white;
+}
+
+.report-failure {
+	color:#ff397a;
+	font-size:12pt;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}

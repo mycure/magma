@@ -1,0 +1,83 @@
+10
+
+dir
+2362
+svn+ssh://subversion@repositories.passeism.org/magma/modules/user/basic
+svn+ssh://subversion@repositories.passeism.org/magma
+
+
+
+2010-12-27T02:16:24.556063Z
+2362
+julien.quintard
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+d82bde0d-97ca-45e2-9f0a-154dbebacf10
+
+actions
+dir
+
+cells
+dir
+
+atoms
+dir
+
+languages
+dir
+
+objects
+dir
+
+sheets
+dir
+
+manifest.php
+file
+
+
+
+
+2012-10-12T08:24:26.000000Z
+7d4998ccc609e24b37227ace06514ad6
+2008-12-15T17:22:55.891785Z
+1973
+julien.quintard
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1093
+
+views
+dir
+

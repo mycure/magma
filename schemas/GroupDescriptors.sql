@@ -1,0 +1,9 @@
+CREATE TABLE GroupDescriptors
+(
+  `id` BIGINT(64) UNSIGNED NOT NULL,
+  `name` VARCHAR(64) NOT NULL,
+  `owner` BIGINT(64) UNSIGNED NOT NULL,
+
+  PRIMARY KEY(`id`),
+  KEY(`name`)
+) ENGINE = MyISAM;

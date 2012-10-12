@@ -1,0 +1,23 @@
+/*
+ * retrieve from the context
+ */
+$language = $context->Get("language");
+
+/*
+ * languages
+ */
+$language["engine|language|en"] = "English";
+$language["engine|language|fr"] = "French";
+$language["engine|language|es"] = "Spanish";
+
+/*
+ * abortion
+ */
+$language["engine|abortion|abortion"] = "Abortion";
+
+/*
+ * re-set the context
+ */
+$context->Set("language", $language);
+
+return true;

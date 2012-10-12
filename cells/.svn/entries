@@ -1,0 +1,49 @@
+10
+
+dir
+2362
+svn+ssh://subversion@repositories.passeism.org/magma/cells
+svn+ssh://subversion@repositories.passeism.org/magma
+
+
+
+2009-01-06T03:33:00.480728Z
+2351
+julien.quintard
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+d82bde0d-97ca-45e2-9f0a-154dbebacf10
+
+access
+dir
+
+basic
+dir
+
+captcha
+dir
+
+gender
+dir
+
+report
+dir
+
+page
+dir
+
+date
+dir
+

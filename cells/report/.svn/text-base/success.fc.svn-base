@@ -1,0 +1,21 @@
+/*
+ * template
+ */
+$template = <<<END
+<div class="report-success">
+  %message%
+</div>
+END;
+
+/*
+ * generate the cell
+ */
+$cell = Template::Resolve($template,
+			  array("message" => Language::Translate($context->inputs["report"]["message"])));
+
+/*
+ * print the cell
+ */
+print $cell;
+
+return true;

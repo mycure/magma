@@ -1,0 +1,16 @@
+/*
+ * retrieve from the context
+ */
+$language = $context->Get("language");
+
+/*
+ * module
+ */
+$language["setup|module|description"] = "This module is used for setting up the system.";
+
+/*
+ * re-set the context
+ */
+$context->Set("language", $language);
+
+return true;

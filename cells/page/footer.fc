@@ -1,0 +1,22 @@
+/*
+ * template
+ */
+$template = <<<END
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+END;
+
+/*
+ * generate the cell
+ */
+$cell = Template::Resolve($template);
+
+/*
+ * print the cell
+ */
+print $cell;
+
+return true;

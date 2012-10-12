@@ -1,0 +1,52 @@
+10
+
+dir
+2362
+svn+ssh://subversion@repositories.passeism.org/magma/modules
+svn+ssh://subversion@repositories.passeism.org/magma
+
+
+
+2010-12-27T02:16:24.556063Z
+2362
+julien.quintard
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+d82bde0d-97ca-45e2-9f0a-154dbebacf10
+
+profile
+dir
+
+setup
+dir
+
+system
+dir
+
+notification
+dir
+
+validation
+dir
+
+contact
+dir
+
+group
+dir
+
+user
+dir
+

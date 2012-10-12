@@ -1,0 +1,35 @@
+/*
+ * retrieve arguments
+ */
+$method = $context->Get("method");
+$action = $context->Get("action");
+$body = $context->Get("body");
+
+$class = $context->Get("class", "", 'class="%class"');
+$enctype = $context->Get("enctype", "", 'enctype="%enctype%"');
+
+/*
+ * template
+ */
+$template = <<<END
+<form action="%action%" method="%method%" %enctype% %class%>
+%body%
+</form>
+END;
+
+/*
+ * generate the cell
+ */
+$cell = Template::Resolve($template,
+			  array("action" => $action,
+				"method" => $method,
+				"enctype" => $enctype,
+				"class" => $class,
+				"body" => $body));
+
+/*
+ * print the cell
+ */
+print $cell;
+
+return true;

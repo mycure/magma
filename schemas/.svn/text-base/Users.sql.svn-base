@@ -1,0 +1,12 @@
+CREATE TABLE Users
+(
+  `id` BIGINT(64) UNSIGNED NOT NULL,
+  `name` VARCHAR(32) NOT NULL,
+  `password` VARCHAR(32) NOT NULL,
+  `email` VARCHAR(64) NOT NULL,
+  `language` VARCHAR(8) NOT NULL,
+  `role` INT NOT NULL,
+
+  PRIMARY KEY(`id`),
+  UNIQUE KEY(`name`)
+) ENGINE = MyISAM;

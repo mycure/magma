@@ -1,0 +1,5 @@
+$path = $context->Get(".path");
+
+Sheet::Register($path . "/sheets/theme.css");
+
+return true;

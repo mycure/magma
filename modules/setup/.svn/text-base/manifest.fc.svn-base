@@ -1,0 +1,27 @@
+$module = new Module;
+
+/*
+ * initialise the module.
+ */
+$module->Define("setup",
+		"setup:module:description");
+
+/*
+ * define the views.
+ */
+$module->View("setup", "views/home");
+
+/*
+ * define the actions.
+ */
+/* XXX
+$module->Action("setup:install", "actions/install",
+		array("modules", "admin-name", "admin-password", "admin-verification", "admin-email", "admin-language"));
+*/
+
+/*
+ * return the module through the context
+ */
+$context->Set("module", $module);
+
+return true;

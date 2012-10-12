@@ -1,0 +1,7 @@
+<?
+{
+
+  View::Forward("user/login");
+
+}
+?>

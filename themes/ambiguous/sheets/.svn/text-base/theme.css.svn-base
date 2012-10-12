@@ -1,0 +1,209 @@
+/*
+ * reset
+ */
+
+HTML, BODY, DIV, SPAN, APPLET, OBJECT, IFRAME,
+H1, H2, H3, H4, H5, H6, P, BLOCKQUOTE, PRE,
+A, ABBR, ACRONYM, ADDRESS, BIG, CITE, CODE,
+DEL, DFN, EM, FONT, IMG, INS, KBD, Q, S, SAMP,
+SMALL, STRIKE, STRONG, SUB, SUP, TT, VAR,
+DL, DT, DD, OL, UL, LI,
+FIELDSET, FORM, LABEL, LEGEND,
+TABLE, CAPTION, TBODY, TFOOT, THEAD, TR, TH, TD
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+OL, UL
+{
+  list-style: none;
+}
+
+TABLE
+{
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+CAPTION, TH, TD
+{
+  text-align: left;
+  font-weight: normal;
+  vertical-align: top;
+}
+
+BLOCKQUOTE:BEFORE, BLOCKQUOTE:AFTER,
+Q:BEFORE, Q:AFTER
+{
+  content: "";
+}
+
+BLOCKQUOTE, Q
+{
+  quotes: "" "";
+}
+
+.clear
+{
+  clear: both;
+  height:0;
+  font-size: 1px;
+  line-height: 0px;
+}
+
+/*
+ * default
+ */
+
+BODY
+{
+  text-align: left;
+  margin: 0 auto;
+  padding: 0;
+  font: 80%/1.4  "Lucida Grande", Verdana, sans-serif;
+  background-color: #3f3434;
+  color: #cccccc;
+}
+
+A
+{
+  color: #388cff;
+  text-decoration: none;
+  outline: none;
+}
+
+A:VISITED
+{
+  color: #388cff;
+}
+
+A:HOVER
+{
+  color: #388cff;
+  text-decoration: underline;
+}
+
+P
+{
+  margin: 0px 0px 15px 0;
+}
+
+IMG
+{
+  border: none;
+}
+
+UL
+{
+  margin: 5px 0px 15px;
+  padding-left: 20px;
+}
+
+UL LI
+{
+  margin: 0px;
+}
+
+OL
+{
+  margin: 5px 0px 15px;
+  padding-left: 20px;
+}
+
+UL LI
+{
+  margin: 0px;
+}
+
+FORM
+{
+  margin: 0px;
+  padding: 0px;
+}
+
+SMALL
+{
+  font-size: 90%;
+}
+
+H1, H2, H3, H4, H5, H6
+{
+  font-weight: bold;
+  line-height: normal;
+}
+
+H1
+{
+  /* margin-left: -20px; */
+  margin-bottom: 20px;
+  color: #86dc31;
+  font-size: 1.8em;
+}
+
+H2
+{
+  /* margin-left: -18px; */
+  margin-bottom: 18px;
+  color: #86dc31;
+  font-size: 1.5em;
+}
+
+H3
+{
+  /* margin-left: -16px; */
+  margin-bottom: 16px;
+  color: #86dc31;
+  font-size: 1.2em;
+}
+
+H4
+{
+  /* margin-left: -14px; */
+  margin-bottom: 14px;
+  color: #86dc31;
+  font-size: 1.0em;
+}
+
+H5
+{
+  /* margin-left: -12px; */
+  margin-bottom: 12px;
+  color: #86dc31;
+  font-size: 0.9em;
+}
+
+H6
+{
+  /* margin-left: -10px; */
+  margin-bottom: 10px;
+  color: #86dc31;
+  font-size: 0.8em;
+}
+
+SELECT
+{
+  border: 1px solid #BBBBBB;
+  padding: 3px;
+}
+
+/*
+ * XXX
+ */
+
+.alignment-right
+{
+  float: right;
+}
+
+.font-60
+{
+  font-size: 60%;
+}

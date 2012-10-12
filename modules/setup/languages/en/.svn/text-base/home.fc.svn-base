@@ -1,0 +1,32 @@
+/*
+ * retrieve from the context
+ */
+$language = $context->Get("language");
+
+/*
+ * home
+ */
+$language["setup|home|title"] = "Set up";
+
+$language["setup|home|modules|title"] = "Modules";
+$language["setup|home|modules|description"] = "Please choose the modules to load into the system:";
+
+$language["setup|home|registration|title"] = "Registration";
+$language["setup|home|registration|description"] = "Please fill in the following form in order to register the very first administrator:";
+$language["setup|home|registration|name"] = "Name";
+$language["setup|home|registration|password"] = "Password";
+$language["setup|home|registration|verification"] = "Password";
+$language["setup|home|registration|email"] = "Email Address";
+$language["setup|home|registration|language"] = "Language";
+
+$language["setup|home|install|title"] = "Install";
+$language["setup|home|install|description"] = "When you are ready to set up the system, please press the following button:";
+
+$language["setup|home|button"] = "Set up";
+
+/*
+ * re-set the context
+ */
+$context->Set("language", $language);
+
+return true;

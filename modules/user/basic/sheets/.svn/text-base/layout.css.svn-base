@@ -1,0 +1,9 @@
+#user
+{
+  width: 100%;
+}
+
+.user-attribute
+{
+  font-weight: bold;
+}

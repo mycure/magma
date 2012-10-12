@@ -1,0 +1,81 @@
+/*
+ * retrieve arguments
+ */
+$name = $context->Get("name");
+$items = $context->Get("items");
+
+$class = $context->Get("class", "", 'class="%class%"');
+$groups = $context->Get("groups", false);
+$multiple = $context->Get("multiple", "", 'multiple="yes"');
+$size = $context->Get("size", "", 'size="%size"');
+
+/*
+ * compute elements
+ */
+if ($groups == true)
+  {
+    $elements = Template::Resolve();
+
+    foreach ($items as $group)
+      {
+	$elements .= Template::Resolve('<optgroup label="%name%">',
+				       array("name" => $group["name"]));
+
+	foreach ($group["elements"] as $item)
+	  {
+	    $selected = "";
+
+	    if (isset($item["selected"]) == true)
+	      $selected = "selected";
+
+	    $elements .= Template::Resolve('<option value="%value%" %selected%>%text%</option>',
+					   array("value" => $item["value"],
+						 "selected" => $selected,
+						 "text" => $item["text"]));
+	  }
+
+	$elements .= Template::Resolve("</optgroup>");
+      }
+  }
+else
+  {
+    $elements = Template::Resolve();
+
+    foreach ($items as $item)
+      {
+	$selected = "";
+
+	if (isset($item["selected"]) == true)
+	  $selected = "selected";
+
+	$elements .= Template::Resolve('<option value="%value%" %selected%>%text%</option>',
+				       array("value" => $item["value"],
+					     "selected" => $selected,
+					     "text" => $item["text"]));
+      }
+  }
+
+/*
+ * template
+ */
+$template = <<<END
+<select name="%name%" %multiple% %size%>
+%elements%
+</select>
+END;
+
+/*
+ * generate the cell
+ */
+$cell = Template::Resolve($template,
+			  array("name" => $name,
+				"multiple" => $multiple,
+				"size" => $size,
+				"elements" => $elements));
+
+/*
+ * print cell
+ */
+print $cell;
+
+return true;
